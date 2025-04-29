@@ -69,11 +69,27 @@ namespace FinancialCrm
             MessageBox.Show("Ödeme Başarılı Bir Şekilde Güncellendi.", "Ödeme & Faturalar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnBanksForm_Click(object sender, EventArgs e)
+       
+
+       
+
+        private void btnBankProcessForm_Click_1(object sender, EventArgs e)
         {
             FrmBanks frmBanks = new FrmBanks();
             frmBanks.Show();
             this.Hide();
+        }
+
+        private void btnDashboardForm_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frmDashboard = new FrmDashboard();
+            frmDashboard.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
