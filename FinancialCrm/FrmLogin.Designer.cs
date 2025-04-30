@@ -120,7 +120,7 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUserName.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtUserName.Location = new System.Drawing.Point(57, 217);
+            this.txtUserName.Location = new System.Drawing.Point(52, 217);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(203, 24);
@@ -131,11 +131,10 @@
             this.txtUserPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUserPassword.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtUserPassword.Location = new System.Drawing.Point(57, 276);
-            this.txtUserPassword.Multiline = true;
+            this.txtUserPassword.Location = new System.Drawing.Point(53, 276);
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.PasswordChar = '*';
-            this.txtUserPassword.Size = new System.Drawing.Size(203, 24);
+            this.txtUserPassword.Size = new System.Drawing.Size(203, 17);
             this.txtUserPassword.TabIndex = 1;
             this.txtUserPassword.UseSystemPasswordChar = true;
             // 
@@ -191,7 +190,6 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinancialCrm.Models;
 
 namespace FinancialCrm
 {
@@ -17,18 +18,27 @@ namespace FinancialCrm
             InitializeComponent();
         }
 
+        FinancialCrmDbEntities db = new FinancialCrmDbEntities();
+        
+
+       
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtUserName.Text=="1" && txtUserPassword.Text == "1")
+            foreach(var item in db.TblUser)
             {
-                new FrmBanks().Show();
-                this.Hide();
-               
+                if (txtUserName.Text == item.UserName && txtUserPassword.Text == item.UserPassword)
+                {
+                    new FrmBanks().Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Geçersiz Kullanıcı Adı veya Şifre","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             }
-            else
-            {
-                MessageBox.Show("Geçersiz Kullanıcı Adı veya Şifre");
-            }
+            
         }
 
         
@@ -66,9 +76,6 @@ namespace FinancialCrm
             lblExit.ForeColor = Color.MidnightBlue;
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-           
-        }
+        
     }
 }

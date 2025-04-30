@@ -6,13 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c8c7bf6c80394f59841d59c5ee5e386b" Name="Diagram1">
         <EntityTypeShape EntityType="FinancialCrmDbModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancialCrmDbModel.TblBankProcesses" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancialCrmDbModel.TblBanks" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialCrmDbModel.TblBankProcesses" Width="1.5" PointX="3.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancialCrmDbModel.TblBanks" Width="1.5" PointX="0.625" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancialCrmDbModel.TblBills" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancialCrmDbModel.TblCategories" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancialCrmDbModel.TblSpendings" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="FinancialCrmDbModel.FK_TblBankProcesses_TblBanks1" ManuallyRouted="false" />
         <AssociationConnector Association="FinancialCrmDbModel.FK_TblSpendings_TblCategories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FinancialCrmDbModel.TblUser" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

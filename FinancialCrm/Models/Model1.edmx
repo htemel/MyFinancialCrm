@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FinancialCrmDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FinancialCrmDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -61,13 +61,14 @@
           <Property Name="SpendingDate" Type="date" />
           <Property Name="SpendingFKCategoryId" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'FinancialCrmDb.dbo.TblUsers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TblUsers">
-          <Property Name="UserId" Type="int" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserPassword" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_TblBankProcesses_TblBanks1">
           <End Role="TblBanks" Type="Self.TblBanks" Multiplicity="0..1" />
           <End Role="TblBankProcesses" Type="Self.TblBankProcesses" Multiplicity="*" />
@@ -99,6 +100,7 @@ warning 6013: The table/view 'FinancialCrmDb.dbo.TblUsers' does not have a prima
           <EntitySet Name="TblBills" EntityType="Self.TblBills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCategories" EntityType="Self.TblCategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSpendings" EntityType="Self.TblSpendings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblBankProcesses_TblBanks1" Association="Self.FK_TblBankProcesses_TblBanks1">
             <End Role="TblBanks" EntitySet="TblBanks" />
             <End Role="TblBankProcesses" EntitySet="TblBankProcesses" />
@@ -108,8 +110,7 @@ warning 6013: The table/view 'FinancialCrmDb.dbo.TblUsers' does not have a prima
             <End Role="TblSpendings" EntitySet="TblSpendings" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FinancialCrmDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -212,7 +213,16 @@ warning 6013: The table/view 'FinancialCrmDb.dbo.TblUsers' does not have a prima
             <End Role="TblCategories" EntitySet="TblCategories" />
             <End Role="TblSpendings" EntitySet="TblSpendings" />
           </AssociationSet>
+          <EntitySet Name="TblUser" EntityType="FinancialCrmDbModel.TblUser" />
         </EntityContainer>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -278,6 +288,15 @@ warning 6013: The table/view 'FinancialCrmDb.dbo.TblUsers' does not have a prima
                 <ScalarProperty Name="SpendingAmount" ColumnName="SpendingAmount" />
                 <ScalarProperty Name="SpendingDate" ColumnName="SpendingDate" />
                 <ScalarProperty Name="SpendingFKCategoryId" ColumnName="SpendingFKCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUser">
+            <EntityTypeMapping TypeName="FinancialCrmDbModel.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

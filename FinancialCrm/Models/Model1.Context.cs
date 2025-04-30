@@ -31,5 +31,6 @@ namespace FinancialCrm.Models
         public virtual DbSet<TblBills> TblBills { get; set; }
         public virtual DbSet<TblCategories> TblCategories { get; set; }
         public virtual DbSet<TblSpendings> TblSpendings { get; set; }
+        public virtual DbSet<TblUser> TblUser { get; set; }
     }
 }
