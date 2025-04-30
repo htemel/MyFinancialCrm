@@ -26,8 +26,18 @@ namespace FinancialCrm
 
         private void btnBillList_Click(object sender, EventArgs e)
         {
-            var values = db.TblBills.ToList();
-            dataGridView1.DataSource = values;
+            //var values = db.TblBills.ToList();
+            //dataGridView1.DataSource = values;
+
+            var query = from x in db.TblBills
+                        select new
+                        {
+                            Fatura_Id=x.BillId,
+                            Açıklama=x.BillTitle,
+                            Miktar=x.BillAmount,
+                            Dönemi=x.BillPeriod
+                        };
+            dataGridView1.DataSource = query.ToList();
         }
 
         private void btnCreateBill_Click(object sender, EventArgs e)
@@ -90,6 +100,40 @@ namespace FinancialCrm
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnBankForm_Click(object sender, EventArgs e)
+        {
+            FrmBanks fr=  new FrmBanks();
+            fr.Show();
+            this.Hide();
+
+        }
+
+        private void btnBillForm_Click(object sender, EventArgs e)
+        {
+            FrmBilling frm = new FrmBilling();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcessForm_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDashboardForm_Click_1(object sender, EventArgs e)
+        {
+            FrmDashboard frmDashboard = new FrmDashboard();
+            frmDashboard.Show();
+            this.Hide();
+        }
+
+        private void btnSpendingForm_Click(object sender, EventArgs e)
+        {
+            FrmSpending fr = new FrmSpending();
+            fr.Show();
+            this.Hide();
         }
     }
 }
