@@ -23,6 +23,9 @@ namespace FinancialCrm
         int count = 0;
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
+            btnDashboardForm.BackColor = Color.Green;
+            btnDashboardForm.Enabled = false;
+
             var totalBalance = db.TblBanks.Sum(x => x.BankBalance);
             lblTotalBalance.Text = totalBalance.ToString() + " ₺";
 
@@ -97,6 +100,35 @@ namespace FinancialCrm
         {
            
            Application.Exit();
+        }
+
+        private void btnBankForm_Click(object sender, EventArgs e)
+        {
+            FrmBanks frm = new FrmBanks();
+            frm.Show();
+            this.Hide();
+
+        }
+
+        private void btnBillForm_Click(object sender, EventArgs e)
+        {
+            FrmBilling frm = new FrmBilling();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcessForm_Click(object sender, EventArgs e)
+        {
+            FrmBankProcessForm frm = new FrmBankProcessForm();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSpendingForm_Click(object sender, EventArgs e)
+        {
+            FrmSpending frm = new FrmSpending();
+            frm.Show();
+            this.Hide();
         }
     }
 }

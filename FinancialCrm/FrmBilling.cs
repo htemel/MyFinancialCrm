@@ -20,6 +20,8 @@ namespace FinancialCrm
         FinancialCrmDbEntities db = new FinancialCrmDbEntities();
         private void FrmBilling_Load(object sender, EventArgs e)
         {
+           
+
             var values = db.TblBills.ToList();
             dataGridView1.DataSource = values;
         }
@@ -119,7 +121,9 @@ namespace FinancialCrm
 
         private void btnBankProcessForm_Click(object sender, EventArgs e)
         {
-            
+            FrmBankProcessForm frm= new FrmBankProcessForm();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnDashboardForm_Click_1(object sender, EventArgs e)

@@ -34,6 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSpendingAmount = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.btnCategoriForm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,7 +81,7 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(796, 43);
+            this.panel5.Size = new System.Drawing.Size(783, 43);
             this.panel5.TabIndex = 11;
             // 
             // panel4
@@ -134,6 +134,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(621, 228);
             this.panel2.TabIndex = 10;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(87, 98);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.Value = new System.DateTime(2025, 4, 30, 0, 0, 0, 0);
             // 
             // comboBox1
             // 
@@ -310,6 +318,7 @@
             this.btnDashboardForm.TabIndex = 13;
             this.btnDashboardForm.Text = "Dashboard";
             this.btnDashboardForm.UseVisualStyleBackColor = false;
+            this.btnDashboardForm.Click += new System.EventHandler(this.btnDashboardForm_Click);
             // 
             // btnBankProcessForm
             // 
@@ -323,10 +332,11 @@
             this.btnBankProcessForm.TabIndex = 12;
             this.btnBankProcessForm.Text = "Banka Hareketleri";
             this.btnBankProcessForm.UseVisualStyleBackColor = false;
+            this.btnBankProcessForm.Click += new System.EventHandler(this.btnBankProcessForm_Click);
             // 
             // btnSpendingForm
             // 
-            this.btnSpendingForm.BackColor = System.Drawing.Color.Transparent;
+            this.btnSpendingForm.BackColor = System.Drawing.Color.Green;
             this.btnSpendingForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpendingForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSpendingForm.ForeColor = System.Drawing.Color.White;
@@ -349,6 +359,7 @@
             this.btnBillForm.TabIndex = 11;
             this.btnBillForm.Text = "Ödeme İşlemleri";
             this.btnBillForm.UseVisualStyleBackColor = false;
+            this.btnBillForm.Click += new System.EventHandler(this.btnBillForm_Click);
             // 
             // btnBankForm
             // 
@@ -397,14 +408,6 @@
             this.btnExit.Text = "Çıkış";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(87, 98);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.Value = new System.DateTime(2025, 4, 30, 0, 0, 0, 0);
             // 
             // FrmSpending
             // 

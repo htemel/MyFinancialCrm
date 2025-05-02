@@ -136,7 +136,7 @@
             // 
             // btnBillForm
             // 
-            this.btnBillForm.BackColor = System.Drawing.Color.Transparent;
+            this.btnBillForm.BackColor = System.Drawing.Color.Green;
             this.btnBillForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBillForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBillForm.ForeColor = System.Drawing.Color.White;

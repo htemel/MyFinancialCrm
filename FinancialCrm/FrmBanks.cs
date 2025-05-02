@@ -15,6 +15,7 @@ namespace FinancialCrm
         FinancialCrmDbEntities db = new FinancialCrmDbEntities();
         private void FrmBanks_Load(object sender, EventArgs e)
         {
+            
             //Banka Bakiyeleri
 
             var ziraatBankBalance = db.TblBanks.Where(x => x.BankTitle == "Ziraat Bankası").Select(x => x.BankBalance).FirstOrDefault();
@@ -71,7 +72,9 @@ namespace FinancialCrm
 
         private void btnBankProcessForm_Click(object sender, EventArgs e)
         {
-            
+            FrmBankProcessForm fr = new FrmBankProcessForm();
+            fr.Show();
+            this.Hide();
         }
 
         private void btnSpendingForm_Click(object sender, EventArgs e)

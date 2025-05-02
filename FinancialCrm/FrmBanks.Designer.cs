@@ -169,7 +169,7 @@
             // 
             // btnBankForm
             // 
-            this.btnBankForm.BackColor = System.Drawing.Color.Transparent;
+            this.btnBankForm.BackColor = System.Drawing.Color.Green;
             this.btnBankForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBankForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBankForm.ForeColor = System.Drawing.Color.White;

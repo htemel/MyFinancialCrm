@@ -19,6 +19,15 @@ namespace FinancialCrm
         }
 
         FinancialCrmDbEntities db = new FinancialCrmDbEntities();
+
+        private void FrmSpending_Load(object sender, EventArgs e)
+        {
+            var values = db.TblCategories.ToList();
+            comboBox1.DisplayMember = "CategoryName";
+            comboBox1.ValueMember = "CategoryId";
+            comboBox1.DataSource = values;
+
+        }
         private void btnBillList_Click(object sender, EventArgs e)
         {
             //var values=db.TblSpendings.ToList();
@@ -37,19 +46,9 @@ namespace FinancialCrm
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
-        private void FrmSpending_Load(object sender, EventArgs e)
-        {
-            var values = db.TblCategories.ToList();
-            comboBox1.DisplayMember = "CategoryName";
-            comboBox1.ValueMember = "CategoryId";
-            comboBox1.DataSource = values;
-
-        }
+        
 
         private void btnCreateBill_Click(object sender, EventArgs e)
         {
@@ -87,6 +86,34 @@ namespace FinancialCrm
         private void btnBankForm_Click(object sender, EventArgs e)
         {
             FrmBanks frmBanks = new FrmBanks();
+            frmBanks.Show();
+            this.Hide();
+        }
+
+        private void btnBillForm_Click(object sender, EventArgs e)
+        {
+            FrmBilling frm = new FrmBilling();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcessForm_Click(object sender, EventArgs e)
+        {
+            FrmBankProcessForm frm= new FrmBankProcessForm();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnDashboardForm_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
